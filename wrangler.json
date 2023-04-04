@@ -1,0 +1,40 @@
+{
+  "name": "superflare-album-app",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "main": "worker.ts",
+  "define": {
+    "process.env.REMIX_DEV_SERVER_WS_PORT": "8002"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "name": "superflare-album-app-db",
+      "database_id": "86c62d26-636b-4497-8d53-3a69a143157c"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "superflare-album-app-bucket",
+      "preview_bucket_name": "BUCKET"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CHANNELS",
+        "class_name": "Channel"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": [
+        "Channel"
+      ]
+    }
+  ]
+}
