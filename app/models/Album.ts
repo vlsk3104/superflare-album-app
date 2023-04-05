@@ -14,15 +14,8 @@ export class Album extends Model {
     return this.belongsTo(User);
   }
 
-  get imageCount(): number {
-    return this.$images.length;
-  }
-
-  toJSON(): AlbumRow & { imageCount: number } {
-    return {
-      ...super.toJSON(),
-      imageCount: this.imageCount,
-    };
+  toJSON(): AlbumRow {
+    return super.toJSON();
   }
 }
 Model.register(Album);

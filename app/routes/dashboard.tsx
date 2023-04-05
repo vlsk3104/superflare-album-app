@@ -71,7 +71,7 @@ export default function Dashboard() {
               <a href={`/albums/${album.id}`}>
                 {album.title}
               </a>
-              <span> - {album.imageCount} images</span>
+              <span> - {album?.images?.length} images</span>
             </li>
           ))}
         </ul>
